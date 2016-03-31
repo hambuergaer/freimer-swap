@@ -1,9 +1,9 @@
 class swap {
 
 include swap::scripts
-include swap::mount
+include swap::mounts
 
 Class['swap::scripts'] ->
-Class['swap::mount']
+Class['swap::mounts']
 
 }
