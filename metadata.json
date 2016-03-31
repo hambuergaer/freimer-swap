@@ -1,7 +1,7 @@
 {
   "name": "freimer-swap",
   "version": "0.1.1",
-  "author": "test",
+  "author": "Frank Reimer",
   "summary": "This Puppet module creates a SWAP LVM volume according to the size of your physical or virtual memory size.",
   "license": "GPL v.3+",
   "source": "https://github.com/hambuergaer/freimer-swap",
