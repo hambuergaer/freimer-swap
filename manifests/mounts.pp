@@ -11,7 +11,7 @@ include lvm
 logical_volume { "swaplv":
 	ensure		=> present,
 	volume_group	=> $rootlv_vg,
-	size		=> $needed_swap_space,
+	size		=> "${needed_swap_space}G",
 } ->
 
 filesystem { "/dev/${$rootlv_vg}/swaplv":
@@ -21,9 +21,16 @@ filesystem { "/dev/${$rootlv_vg}/swaplv":
 
 mount { 'swap':
 	atboot  => "yes",
-	ensure  => mounted,
+	#ensure  => mounted,
 	device	=> "/dev/mapper/${$rootlv_vg}-swaplv",
 	fstype  => "swap", 
+	options => "defaults",
+} ->
+
+exec { 'swapon':
+	path	=> "/usr/bin:/usr/sbin:/bin",
+	command	=> "swapon /dev/mapper/${$rootlv_vg}-swaplv",
+	unless	=> "/usr/local/bin/check-if-swap-is-used.sh",
 }
 
 }

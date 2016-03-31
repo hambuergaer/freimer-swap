@@ -1,28 +1,20 @@
 {
-  "name": "freimer-swap",
-  "version": "0.1.1",
-  "author": "Frank Reimer",
-  "summary": "This Puppet module creates a SWAP LVM volume according to the size of your physical or virtual memory size.",
+  "name": "freimer-swapon",
+  "version": "0.1.2",
+  "author": "freimer",
+  "summary": "This Puppet module creates a SWAP LVM volume according to the size of your physical or virtual memory size. The LV will be created on the VG where your root partition resides on.",
   "license": "GPL v.3+",
   "source": "https://github.com/hambuergaer/freimer-swap",
   "project_page": "https://github.com/hambuergaer/freimer-swap",
   "issues_url": "https://github.com/hambuergaer/freimer-swap/issues",
   "operatingsystem_support": [
     {
-      "operatingsystem": "RedHat",
-      "operatingsystemrelease": [
-        "6",
-        "7"
-      ]
+      "operatingsystem": "RedHat"
     },
     {
-      "operatingsystem": "CentOS",
-      "operatingsystemrelease": [
-        "6",
-        "7"
-      ]
+      "operatingsystem": "CentOS"
     }
-  ]
+  ],
 }
 
 
